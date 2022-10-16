@@ -50,5 +50,8 @@ void FillMatrix(int [,] matr)
     }
 }
 
-FillMatrix(matrix);
+PrintMatrix(matrix); // были нули
+Console.WriteLine();
+
+FillMatrix(matrix); // заполнили Random
 PrintMatrix(matrix);
