@@ -27,11 +27,28 @@ int [,] matrix  = new int [3, 4];
 //     Console.WriteLine();
 // }
 
-for (int i = 0; i < matrix.GetLength(0); i++) // идем по строчкам
+void PrintMatrix(int [,] matr) 
 {
-    for (int j = 0; j < matrix.GetLength(1); j++) // идем по колонкам
+    for (int i = 0; i < matr.GetLength(0); i++) // идем по строчкам
     {
-    Console.Write($" {matrix[i, j]} ");
+        for (int j = 0; j < matr.GetLength(1); j++) // идем по колонкам
+        {
+        Console.Write($" {matr[i, j]} ");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
 }
+
+void FillMatrix(int [,] matr)
+{
+    for (int i = 0; i < matr.GetLength(0); i++) // идем по строчкам
+    {
+        for (int j = 0; j < matr.GetLength(1); j++) // идем по колонкам
+        {
+            matr [i, j] = new Random().Next(1, 10); // интервал будте от 1 до 9 (10 не включается)
+        }
+    }
+}
+
+FillMatrix(matrix);
+PrintMatrix(matrix);
